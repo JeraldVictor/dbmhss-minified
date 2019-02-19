@@ -1,0 +1,1 @@
+global.loged=!1,module.exports.authenticationMiddleware=(()=>(function(e,l,o){if(global.loged)return o();l.render("login",{msg:"Please Login"})}));

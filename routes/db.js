@@ -1,0 +1,1 @@
+var sqlite3=require("sqlite3").verbose();const db=new sqlite3.Database("./DB/database.sqlite",function(e){e?console.log(e):console.log("DB is Connected")});module.exports=db;

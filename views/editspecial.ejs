@@ -1,0 +1,167 @@
+<% include layouts/header.ejs %>
+    <style>
+        #btns{
+            margin-top:20px;
+            text-align:right;
+        }
+        #pic{
+            text-align:center;
+        }
+    </style>
+  <div class="main">
+    <form class="jumbotron container" action="/students/update/<%=list.add_no%>" method="POST" autocomplete="off">
+    <div class="row justify-content-between">
+    <div class="col">
+        <div class="form-group">
+        <label for="sname">Student Name</label>
+        <input type="text" class="form-control" id="sname" aria-describedby="studentelp" placeholder="munusami s" name="sname" value="<%=list.name %>">
+        </div>
+        <div class="form-group">
+            <label>Blood Group</label>
+            <input type="text" class="form-control" placeholder="A+ve" name="blood_group" value="<%=list.bg%>">
+        </div>
+    </div>
+    <div id="pic" class="col">
+      <div class="form-group">
+        <label class="text-center" for="upimg">Student Image</label>
+        <br>
+        <img src=" /uploads/<%=list.img%>.jpg" width="150px" height="150" class="img-thumbnail">
+      </div>
+      <div class="form-group">
+        <a href="/pic-upload/<%=list.name %>/<%=list.add_no%>" class="btn btn-dark">Change profile pic</a>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label for="enum">Exam Number</label>
+                <input type="text" class="form-control" id="enum" placeholder="1712" name="exam_no" value="<%=list.exno%>">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="add_no">Admission Number</label>
+                <input type="text" class="form-control" id="add_no" placeholder="101 101A" name="add_no" value="<%=list.add_no%>">
+            </div>
+        </div>
+    </div>
+	  <div class="row justify-content-between">
+	      <div class="col-6">
+              <div class="form-group">
+  				    <label for="std">Standad</label>
+  				     <input type="text"  class="form-control" id="std" name="sstd" value="<%=list.std%>"> 
+  				  </div>
+	      </div>
+	      <div class="col-6">
+	          <div class="form-group">
+	              <label for="ssec">Section</label>
+	              <input type="text" class="form-control" id="ssec" placeholder="A..B..C" name="ssec" value="<%=list.sec %>">
+	            </div>
+	      </div>
+     </div>
+     <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>emis</label>
+              <input type="text" class="form-control" placeholder="2010124352" name="emis" value="<%=list.emis%>">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label>aadhar</label>
+              <input class="form-control" type="number" placeholder="109268 12783 29369 18369" name="aadhar" value="<%=list.aadhar%>">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="dob">D.O.B</label>
+                    <input type="date" class="form-control" id="dob" name="dob" value="<%=list.dob%>">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <input class="form-control" id="gender" name="gender" value="<%=list.gender%>"/>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Father Name</label>
+                <input  class="form-control" type="text" name="fname" placeholder="John" value="<%=list.fname%>">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Father Occupation</label>
+                <input  class="form-control" type="text" name="foc" placeholder="Clerk" value="<%=list.foc%>">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Mother Name</label>
+                <input  class="form-control" type="text" name="mname" placeholder="Mary T" value="<%=list.mname%>">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Mother Occupation</label>
+                <input  class="form-control" type="text" name="moc" placeholder="Teacher" value="<%=list.moc%>">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Mobile Number 1</label>
+                <input type="number" class="form-control" placeholder="Must give" name="mob1" required value="<%=list.mob1%>">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Mobile Number 2</label>
+                <input type="number" class="form-control" placeholder="optinal" name="mob2" value="<%=list.mob2%>">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Address</label>
+                <textarea class="form-control" maxlength="160" name="address" placeholder="Dubai, Dubai main Road"><%=list.address%></textarea>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Religion</label>
+                <input class="form-control" type="text" placeholder="Christian" name="religion" value="<%=list.religion%>">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label>Caste</label>
+              <input type="text" class="form-control" placeholder="Cast" name="caste" value="<%=list.caste%>">
+            </div>
+            <div class="col">
+              <label>Community</label>
+              <input type="text" class="form-control" placeholder="Community" name="Community" value="<%=list.community%>">
+            </div>
+		  </div>
+     <div id="btns" class="row">
+        <div class="col">
+            <a class="btn btn-danger" href="/students/edit/<%=list.std %>/<%=list.sec%>">Cancel</a>
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary" >Submit</button>
+        </div>
+     </div>
+    </form>
+</div>
+<% include layouts/footer.ejs %>
